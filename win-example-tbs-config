@@ -1,0 +1,27 @@
+# ======================================
+# (c) 2018 Adfrian Newby
+# ======================================
+#
+# ---------------------------------------------------------------------------------------------
+# Tablespace details
+#
+# Syntax
+# Tablespacename^Tablespacesize^DirectoryOrLogicalVolume^ExtentSize^SegSpaceMgt
+# 
+# ******* NO SPACES *********
+#
+#---------------------------------------------------------------------------------------------
+DATA01^64M^c:\oradata\windb\data^4M^auto
+DATA02^64M^c:\oradata\windb\data^4M^auto
+DATA03^64M^c:\oradata\windb\data^1M^auto
+DATA04^64M^c:\oradata\windb\data^1M^auto
+DATA05^64M^c:\oradata\windb\data^128K^auto
+#
+INDEX01^64M^c:\oradata\windb\data^4M^auto
+INDEX02^64M^c:\oradata\windb\data^4M^auto
+INDEX03^64M^c:\oradata\windb\data^1M^auto
+INDEX04^64M^c:\oradata\windb\data^1M^auto
+INDEX05^64M^c:\oradata\windb\data^128K^auto
+#
+USERS^32M^c:\oradata\windb\data^128K^auto
+#

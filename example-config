@@ -1,0 +1,79 @@
+# ======================================
+# (c) 2018 Adrian Newby
+# ======================================
+#
+# -----------------------------------------
+# Basic DB setup
+#
+# STORAGE_MODEL must be FILE or RAW
+#
+# All _LOC variables should be either directories or character-based
+# raw logical volumes.  (In AIX, the character-based raw logical volume
+# is identified by prepending an "r" to the logical volume name.  In Linux
+# you must set up a raw device that points to the logical volume.)
+#
+# This version is for UNIX or Linux
+#
+# -----------------------------------------
+ORACLE_BASE=/opt/oracle
+ORACLE_HOME=/opt/oracle/product/11.1.0
+ORA_COMPAT=11.1.0
+#
+DB_NAME=river
+LOG_DIR=/opt/oracle/admin/river/logs
+#
+STORAGE_MODEL=RAW
+#
+#
+# Note: A static timezone is highly-recommended.  Oracle, in particular, 
+# recommends using UTC to avoid time zone conversion.  Due to history
+# Veros is pretty much anchored to -08:00
+#
+TIMEZONE=-08:00
+#
+SYS_PWD=oracle
+SYSTEM_PWD=manager
+#
+CTL1_LOC=/dev/rriver_ctl1
+CTL2_LOC=/dev/rriver_ctl2
+#
+# Note:  redo logs 1 and 3 will end up in the same logfile group and should, therefore,
+# be on different storage from each other.
+# Similarly, redo logs 2 and 4 will be on the same logfile group and also, therefore,
+# be on different storage from each other.
+#
+REDO1_LOC=/dev/rriver_redo1
+REDO2_LOC=/dev/rriver_redo2
+REDO3_LOC=/dev/rriver_redo3
+REDO4_LOC=/dev/rriver_redo4
+REDO_SZ=127M
+LOGBUF_SZ=10485760
+# -----------------------------------------
+# Standard data files and sizes
+# -----------------------------------------
+SYSTEM_LOC=/dev/rriver_system
+SYSTEM_SZ=1279M
+#
+SYSAUX_LOC=/dev/rriver_sysaux
+SYSAUX_SZ=2559M
+#
+TEMP_LOC=/dev/rriver_temp
+TEMP_SZ=5119M
+#
+UNDO_LOC=/dev/rriver_undo
+UNDO_SZ=5119M
+# -----------------------------------------
+# Memory sizes
+# -----------------------------------------
+MEM_SZ=16G
+# -----------------------------------------
+# Block sizes
+# -----------------------------------------
+BLK_SZ=32768
+MBR_CNT=32
+# -----------------------------------------
+# Misc
+# -----------------------------------------
+DEFAULT_TBS=USERS
+#
+

@@ -1,0 +1,89 @@
+# ======================================
+# (c) 2018 Adrian Newby
+# ======================================
+
+ 
+###########################################
+# Archive and Redo
+###########################################
+log_archive_dest_1='LOCATION=%%WINDRV%%/archive/%%DB%%'
+log_archive_format=%d_%T_%S_%r.log
+log_buffer=%%LOGBUF%%
+ 
+###########################################
+# Cache and I/O
+###########################################
+db_block_size=%%BLK%%
+db_file_multiblock_read_count=%%MBRC%%
+ 
+###########################################
+# Database Identification
+###########################################
+db_domain=""
+db_name=%%DB%%
+ 
+###########################################
+# Key file locations
+###########################################
+audit_file_dest=%%ORABAS%%/admin/%%DB%%/adump
+audit_trail=none
+diagnostic_dest=%%ORABAS%%
+utl_file_dir=to-be-specified
+ 
+###########################################
+# Control Files
+###########################################
+control_files=("%%CTL1%%", "%%CTL2%%")
+ 
+###########################################
+# Miscellaneous
+###########################################
+compatible=%%COMPAT%%
+ 
+###########################################
+# Processes, Cursors and Sessions
+###########################################
+processes=150
+job_queue_processes=10
+session_max_open_files=20
+dbwr_io_slaves=4
+open_cursors=300
+ 
+###########################################
+# Memory
+###########################################
+memory_max_target=%%MEM%%
+memory_target=%%MEM%%
+
+ 
+###########################################
+# Security and Auditing
+###########################################
+remote_login_passwordfile=EXCLUSIVE
+ 
+###########################################
+# Shared Server
+###########################################
+dispatchers="(PROTOCOL=TCP) (SERVICE=%%DB%%XDB)"
+ 
+###########################################
+# Statistics and optimization
+###########################################
+filesystemio_options=setall
+disk_asynch_io=true
+statistics_level=all
+control_management_pack_access=diagnostic+tuning
+ 
+###########################################
+# System Managed Undo and Rollback Segments
+###########################################
+undo_management=AUTO
+undo_tablespace=UNDO
+ 
+###########################################
+# Application-specific modifications
+###########################################
+recyclebin=off
+CURSOR_SHARING=FORCE
+
+

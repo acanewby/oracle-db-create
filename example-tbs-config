@@ -1,0 +1,29 @@
+# ======================================
+# (c) 2018 Adrian Newby
+# ======================================
+#
+# ---------------------------------------------------------------------------------------------
+# Tablespace details
+#
+# Syntax
+# Tablespacename^Tablespacesize^DirectoryOrLogicalVolume^ExtentSize^SegSpaceMgt
+# 
+# ******* NO SPACES *********
+#
+#---------------------------------------------------------------------------------------------
+DATA01^4095M^/dev/rriver_data1^500M^auto
+DATA02^2047M^/dev/rriver_data2^500M^auto
+DATA03^767M^/dev/rriver_data3^100M^auto
+DATA04^767M^/dev/rriver_data4^100M^auto
+DATA05^4095M^/dev/rriver_data5^256K^auto
+#
+INDEX01^4095M^/dev/rriver_index1^500M^auto
+INDEX02^2047M^/dev/rriver_index2^500M^auto
+INDEX03^767M^/dev/rriver_index3^100M^auto
+INDEX04^767M^/dev/rriver_index4^100M^auto
+INDEX05^4095M^/dev/rriver_index5^256K^auto
+#
+#
+MISC^127M^/dev/rriver_misc^256K^auto
+USERS^127M^/dev/rriver_users^256K^auto
+#

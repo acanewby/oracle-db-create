@@ -1,0 +1,39 @@
+# ======================================
+# (c) 2018 Adrian Newby
+# ======================================
+#
+# -----------------------------------------
+# Additional redo log setup
+#
+# All _LOC variables should be either directories or character-based
+# raw logical volumes.  (In AIX, the character-based raw logical volume
+# is identified by prepending an "r" to the logical volume name.  In Linux
+# you must set up a raw device that points to the logical volume.)
+#
+# All redo log files will have the size specified in REDO_SZ
+# defined in the main config file
+#
+# This version is for UNIX or Linux
+# -----------------------------------------
+#
+# Note:  redo logs must be listed in pairs, and will be set up as part of
+# the same redo log group.  Each member of the pair, therefore, should
+# reside on separate storage.
+#
+# It is OK to specify NO ADDITIONAL REDO LOG FILES here if your database
+# does not need them
+#
+# AIX example
+#
+/dev/rriver_redo_a1
+/dev/rriver_redo_a2
+#
+/dev/rriver_redo_b1
+/dev/rriver_redo_b2
+#
+# Linux would look like this
+#
+# /dev/raw/raw15
+# /dev/raw/raw16
+#
+

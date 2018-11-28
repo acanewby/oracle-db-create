@@ -1,0 +1,73 @@
+# ======================================
+# (c) 2018 Adrian Newby
+# ======================================
+#
+# -----------------------------------------
+# Basic DB setup
+#
+# STORAGE_MODEL must be FILE or RAW
+#
+# All _LOC variables should be either directories or character-based
+# raw logical volumes.  (In AIX, the character-based raw logical volume
+# is identified by prepending an "r" to the logical volume name.  In Linux
+# you must set up a raw device that points to the logical volume.)
+#
+# This version is for Windows - note additional parameter: ORACLE_BASE_DRV
+#
+# -----------------------------------------
+ORACLE_BASE_DRV=C:
+ORACLE_BASE=C:\usr-local\oracle
+ORACLE_HOME=C:\usr-local\oracle\10.2.0
+ORA_COMPAT=10.2.0
+#
+DB_NAME=windb
+LOG_DIR=C:\usr-local\oracle\admin\windb\logs
+#
+STORAGE_MODEL=FILE
+#
+SYS_PWD=oracle
+SYSTEM_PWD=manager
+#
+CTL1_LOC=c:\oradata\windb\ctl
+CTL2_LOC=c:\oradata\windb\ctl
+#
+# Note:  redo logs 1 and 3 will end up in the same logfile group and should, therefore,
+# be on different storage from each other.
+# Similarly, redo logs 2 and 4 will be on the same logfile group and also, therefore,
+# be on different storage from each other.
+#
+REDO1_LOC=c:\oradata\windb\redo
+REDO2_LOC=c:\oradata\windb\redo
+REDO3_LOC=c:\oradata\windb\redo
+REDO4_LOC=c:\oradata\windb\redo
+REDO_SZ=128M
+LOGBUF_SZ=4194304
+# -----------------------------------------
+# Standard data files and sizes
+# -----------------------------------------
+SYSTEM_LOC=c:\oradata\windb\data
+SYSTEM_SZ=512M
+#
+SYSAUX_LOC=c:\oradata\windb\data
+SYSAUX_SZ=256M
+#
+TEMP_LOC=c:\oradata\windb\data
+TEMP_SZ=128M
+#
+UNDO_LOC=c:\oradata\windb\data
+UNDO_SZ=128M
+# -----------------------------------------
+# Memory sizes
+# -----------------------------------------
+MEM_SZ=2048M
+# -----------------------------------------
+# Block sizes
+# -----------------------------------------
+BLK_SZ=16384
+MBR_CNT=32
+# -----------------------------------------
+# Misc
+# -----------------------------------------
+DEFAULT_TBS=USERS
+#
+
